@@ -5,6 +5,8 @@ const FormularioCadastro = () => {
   const [ nome, setNome ] = useState('');
   const [ sobrenome, setSobrenome ] = useState('');
   const [ cpf, setCPF ] = useState('');
+  const [ promocoes, setPromocoes ] = useState(true);
+  const [ novidades, setNovidades ] = useState(true);
 
   return (
     <form 
@@ -42,8 +44,10 @@ const FormularioCadastro = () => {
         label='Promoções'
         control={
           <Switch 
+            checked={promocoes}
+            onChange={(event) => setPromocoes(event.target.checked)}
             name='promoções'
-            defaultChecked
+            defaultChecked={promocoes}
             color='primary'
           />
         }
@@ -51,9 +55,11 @@ const FormularioCadastro = () => {
       <FormControlLabel 
         label='Novidades'
         control={
-          <Switch 
+          <Switch
+            checked={novidades}
+            onChange={(event) => setNovidades(event.target.checked)}
             name='novidades'
-            defaultChecked
+            defaultChecked={novidades}
             color='primary'
           />
         }
