@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, TextField, Switch, FormControlLabel } from '@mui/material';
 
-const FormularioCadastro = () => {
+const FormularioCadastro = ({ aoEnviar }) => {
   const [ nome, setNome ] = useState('');
   const [ sobrenome, setSobrenome ] = useState('');
   const [ cpf, setCPF ] = useState('');
@@ -12,6 +12,7 @@ const FormularioCadastro = () => {
     <form 
       onSubmit={(event) => {
         event.preventDefault();
+        aoEnviar({ nome, sobrenome, cpf, promocoes, novidades });
       }}>
       <TextField
         onChange={(event) => setNome(event.target.value)} 
