@@ -12,7 +12,7 @@ const FormularioCadastro = ({ aoEnviar, validarCPF }) => {
 
   ];
 
-  function proximo() {
+  function proximo(dados) {
     setEtapaAtual(etapaAtual + 1);
   }
 
