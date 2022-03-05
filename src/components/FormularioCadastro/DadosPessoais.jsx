@@ -14,7 +14,8 @@ const DadosPessoais = ({ aoEnviar, validarCPF }) => {
       onSubmit={(event) => {
         event.preventDefault();
         aoEnviar({ nome, sobrenome, cpf, promocoes, novidades });
-      }}>
+      }}
+    >
       <TextField
         onChange={(event) => setNome(event.target.value)} 
         value={nome}
