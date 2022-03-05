@@ -18,6 +18,7 @@ const DadosUsuario = ({ aoEnviar }) => {
         id='email'
         label='Email'
         type='email'
+        name='email'
         variant='outlined'
         margin='normal'
         fullWidth
@@ -29,6 +30,7 @@ const DadosUsuario = ({ aoEnviar }) => {
         id='senha'
         label='Senha'
         type='password'
+        name='senha'
         variant='outlined'
         margin='normal'
         fullWidth
