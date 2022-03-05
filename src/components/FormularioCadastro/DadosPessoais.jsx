@@ -15,12 +15,23 @@ const DadosPessoais = ({ aoEnviar, validacoes }) => {
     novoEstado[name] = validacoes[name](value);
     setErros(novoEstado);
   }
+
+  function possoEnviar() {
+    for(let campo in erros) {
+      if(!erros[campo].valido) {
+        return false;
+      }
+    }
+    return true;
+  }
   
   return (
     <form 
       onSubmit={(event) => {
         event.preventDefault();
-        aoEnviar({ nome, sobrenome, cpf, promocoes, novidades });
+        if(possoEnviar()) {
+          aoEnviar({ nome, sobrenome, cpf, promocoes, novidades });
+        }
       }}
     >
       <TextField
@@ -85,7 +96,7 @@ const DadosPessoais = ({ aoEnviar, validacoes }) => {
         type='submit'
         variant='contained'
         color='primary'
-      >Cadastrar</Button>
+      >Próximo</Button>
     </form>
   );
 }
