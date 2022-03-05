@@ -12,7 +12,16 @@ function useErros(validacoes) {
     setErros(novoEstado);
   }
 
-  return [erros, validarCampos];
+  function possoEnviar() {
+    for(let campo in erros) {
+      if(!erros[campo].valido) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  return [erros, validarCampos, possoEnviar];
 }
 
 function criarEstadoInicial(validacoes) {
