@@ -21,6 +21,7 @@ const DadosEntrega = ({ aoEnviar }) => {
         id='cep'
         label='CEP'
         type='number'
+        name='cep'
         variant='outlined'
         margin='normal'
       />
@@ -30,6 +31,7 @@ const DadosEntrega = ({ aoEnviar }) => {
         id='endereco'
         label='Endereço'
         type='text'
+        name='endereco'
         variant='outlined'
         margin='normal'
         fullWidth
@@ -40,6 +42,7 @@ const DadosEntrega = ({ aoEnviar }) => {
         id='numero'
         label='Numero'
         type='number'
+        name='numero'
         variant='outlined'
         margin='normal'
       />
@@ -49,15 +52,17 @@ const DadosEntrega = ({ aoEnviar }) => {
         id='estado'
         label='Estado'
         type='text'
+        name='estado'
         variant='outlined'
         margin='normal'
       />
       <TextField
         value={cidade}
         onChange={(event) => setCidade(event.target.value)} 
-        id='cep'
+        id='cidade'
         label='Cidade'
         type='text'
+        name='cidade'
         variant='outlined'
         margin='normal'
       />
