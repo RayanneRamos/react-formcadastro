@@ -7,7 +7,7 @@ const DadosUsuario = ({ aoEnviar }) => {
   const [ senha, setSenha ] = useState('');
   const [ erros, setErros ] = useState({ senha: { valido: true, texto: '' } });
 
-  const validacoes = useContext();
+  const validacoes = useContext(ValidacoesCadastro);
 
   function validarCampos(event) {
     const { name, value } = event.target;
