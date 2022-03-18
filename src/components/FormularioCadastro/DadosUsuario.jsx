@@ -6,6 +6,7 @@ import useErros from '../../hooks/useErros';
 const DadosUsuario = ({ aoEnviar }) => {
   const [ email, setEmail ] = useState('');
   const [ senha, setSenha ] = useState('');
+  const [ confirmaSenha, setConfirmaSenha ] = useState('');
   const validacoes = useContext(ValidacoesCadastro);
   const [erros, validarCampos, possoEnviar] = useErros(validacoes);
 
@@ -14,7 +15,7 @@ const DadosUsuario = ({ aoEnviar }) => {
       onSubmit={(event) => {
         event.preventDefault();
         if(possoEnviar()) {
-          aoEnviar({ email, senha });
+          aoEnviar({ email, senha, confirmaSenha });
         }
       }}
     >
@@ -40,6 +41,18 @@ const DadosUsuario = ({ aoEnviar }) => {
         label='Senha'
         type='password'
         name='senha'
+        variant='outlined'
+        margin='normal'
+        fullWidth
+        required
+      />
+      <TextField 
+        value={confirmaSenha}
+        onChange={(event) => setConfirmaSenha(event.target.value)}
+        id='confirmaSenha'
+        label='Confirma Senha'
+        type='password'
+        name='confirmaSenha'
         variant='outlined'
         margin='normal'
         fullWidth
