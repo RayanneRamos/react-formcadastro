@@ -3,7 +3,7 @@ import { Button, TextField, Switch, FormControlLabel } from '@mui/material';
 import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
 import useErros from '../../hooks/useErros';
 
-const DadosPessoais = ({ aoEnviar }) => {
+const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
   const [ nome, setNome ] = useState('');
   const [ sobrenome, setSobrenome ] = useState('');
   const [ cpf, setCPF ] = useState('');
@@ -79,6 +79,13 @@ const DadosPessoais = ({ aoEnviar }) => {
           />
         }
       />
+      <Button
+        style={{ marginRight: 10}}
+        onClick={aoVoltar}
+        type='submit'
+        variant='contained'
+        color='error'
+      >Voltar</Button>
       <Button
         type='submit'
         variant='contained'
