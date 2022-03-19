@@ -15,9 +15,9 @@ const FormularioCadastro = ({ aoEnviar, validacoes }) => {
   });
 
   const formularios = [
-    <DadosUsuario aoEnviar={coletarDados}  />,
-    <DadosPessoais aoEnviar={coletarDados}  />,
-    <DadosEntrega aoEnviar={coletarDados}  />,
+    <DadosUsuario aoEnviar={coletarDados}  aoVoltar={voltarColetarDados} />,
+    <DadosPessoais aoEnviar={coletarDados} aoVoltar={voltarColetarDados} />,
+    <DadosEntrega aoEnviar={coletarDados}  aoVoltar={voltarColetarDados} />,
     <Typography variant='h5'>Obrigado por se cadastrar!</Typography>
   ];
 
@@ -26,8 +26,17 @@ const FormularioCadastro = ({ aoEnviar, validacoes }) => {
     proximo();
   }
 
+  function voltarColetarDados(dados) {
+    setDadosColetados({...dadosColetados, ...dados});
+    voltar();
+  }
+
   function proximo() {
     setEtapaAtual(etapaAtual + 1);
+  }
+
+  function voltar() {
+    setEtapaAtual(etapaAtual -1);
   }
 
   return (
