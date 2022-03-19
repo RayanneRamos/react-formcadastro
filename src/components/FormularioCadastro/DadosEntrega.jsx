@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 
-const DadosEntrega = ({ aoEnviar }) => {
+const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
   const [ cep, setCEP ] = useState('');
   const [ endereco, setEndereco ] = useState('');
   const [ numero, setNumero ] = useState('');
   const [ estado, setEstado ] = useState('');
   const [ cidade, setCidade ] = useState('');
+  const [ bairro, setBairro ] = useState('');
 
   return(
     <form 
       onSubmit={(event) => {
         event.preventDefault();
-        aoEnviar({ cep, endereco, numero, cidade, estado });
+        aoEnviar({ cep, endereco, numero, cidade, estado, bairro });
       }}
     >
       <TextField 
@@ -37,6 +38,7 @@ const DadosEntrega = ({ aoEnviar }) => {
         fullWidth
       />
       <TextField
+        style={{ marginRight: 25 }}
         value={numero}
         onChange={(event) => setNumero(event.target.value)} 
         id='numero'
@@ -57,6 +59,7 @@ const DadosEntrega = ({ aoEnviar }) => {
         margin='normal'
       />
       <TextField
+        style={{ marginRight: 25}}
         value={cidade}
         onChange={(event) => setCidade(event.target.value)} 
         id='cidade'
@@ -66,11 +69,28 @@ const DadosEntrega = ({ aoEnviar }) => {
         variant='outlined'
         margin='normal'
       />
-      <Button 
+      <TextField 
+        value={bairro}
+        onChange={(event) => setBairro(event.target.value)}
+        id='bairro'
+        label='Bairro'
+        type='text'
+        name='bairro'
+        variant='outlined'
+        margin='normal'
+      />
+      <Button
+        onClick={aoVoltar}
+        style={{ marginRight: 25 }}  
+        type='submit' 
+        variant='contained' 
+        color='error' 
+      >Voltar</Button>
+      <Button
         type='submit' 
         variant='contained' 
         color='primary' 
-        fullWidth>Finalizar Cadastro</Button>
+      >Finalizar Cadastro</Button>
     </form>
   );
 }
