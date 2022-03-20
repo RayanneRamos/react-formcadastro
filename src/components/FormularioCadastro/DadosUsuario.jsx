@@ -37,7 +37,7 @@ const DadosUsuario = ({ aoEnviar }) => {
         onChange={(event) => setSenha(event.target.value)}
         onBlur={validarCampos}
         error={!erros.senha.valido}
-        helperTexto={erros.senha.texto}
+        helperText={erros.senha.texto}
         placeholder='**********'
         id='senha'
         label='Senha'
