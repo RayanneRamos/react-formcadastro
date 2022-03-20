@@ -22,6 +22,7 @@ const DadosUsuario = ({ aoEnviar }) => {
       <TextField 
         value={email}
         onChange={(event) => setEmail(event.target.value)}
+        placeholder='joaosilva@gmail.com'
         id='email'
         label='Email'
         type='email'
@@ -37,6 +38,7 @@ const DadosUsuario = ({ aoEnviar }) => {
         onBlur={validarCampos}
         error={!erros.senha.valido}
         helperTexto={erros.senha.texto}
+        placeholder='**********'
         id='senha'
         label='Senha'
         type='password'
@@ -49,6 +51,7 @@ const DadosUsuario = ({ aoEnviar }) => {
       <TextField 
         value={confirmaSenha}
         onChange={(event) => setConfirmaSenha(event.target.value)}
+        placeholder='**********'
         id='confirmaSenha'
         label='Confirma Senha'
         type='password'

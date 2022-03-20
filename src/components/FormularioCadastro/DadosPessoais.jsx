@@ -24,22 +24,26 @@ const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
       <TextField
         onChange={(event) => setNome(event.target.value)} 
         value={nome}
+        placeholder='João'
         id='nome'
         label='Nome'
         name='nome'
         variant='outlined'
         fullWidth
         margin='normal'
+        required
       />
       <TextField
         onChange={(event) => setSobrenome(event.target.value)}
         value={sobrenome}
+        placeholder='Silva'
         id='sobrenome'
         label='Sobrenome'
         name='sobrenome'
         variant='outlined'
         fullWidth
         margin='normal'
+        required
       />
       <TextField 
         onChange={(event) => setCPF(event.target.value)}
@@ -47,6 +51,7 @@ const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
         error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
         onBlur={validarCampos}
+        placeholder='11122233310'
         id='cpf'
         label='CPF'
         name='cpf'
@@ -54,6 +59,7 @@ const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
         variant='outlined'
         fullWidth
         margin='normal'
+        required
       />
       <FormControlLabel 
         label='Promoções'
