@@ -1,6 +1,8 @@
-function validarCPF(cpf) {
-  if(cpf.length !== 11) {
-    return { valido: false, texto: 'CPF deve ter 11 dígitos.' }
+function validarEmail(email) {
+  const emailRegex = '(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}\.?\w{0,2})';
+
+  if(email.length !== emailRegex) {
+    return { valido: false, texto: 'Precisa preencher o campo email no formato certo.' }
   } else {
     return { valido: true, texto: '' }
   }
@@ -14,4 +16,14 @@ function validarSenha(senha) {
   }
 }
 
-export { validarCPF, validarSenha };
+function validarCPF(cpf) {
+  if(cpf.length !== 11) {
+    return { valido: false, texto: 'CPF deve ter 11 dígitos.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+
+
+export { validarEmail, validarSenha, validarCPF };

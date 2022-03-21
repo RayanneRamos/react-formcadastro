@@ -22,6 +22,9 @@ const DadosUsuario = ({ aoEnviar }) => {
       <TextField 
         value={email}
         onChange={(event) => setEmail(event.target.value)}
+        onBlur={validarCampos}
+        error={!erros.email.valido}
+        helperText={erros.email.texto}
         placeholder='joaosilva@gmail.com'
         id='email'
         label='Email'
