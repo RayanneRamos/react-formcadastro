@@ -54,4 +54,12 @@ function validarCEP(cep) {
   }
 }
 
-export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP };
+function validarEndereco(endereco) {
+  if(endereco === "") {
+    return { valido: false, texto: 'O campo endereço não pode ser vazio.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco };

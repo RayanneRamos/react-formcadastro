@@ -38,6 +38,9 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
       <TextField
         value={endereco}
         onChange={(event) => setEndereco(event.target.value)} 
+        onBlur={validarCampos}
+        error={!erros.endereco.valido}
+        helperText={erros.endereco.texto}
         placeholder='Rua Barata Ribeiro'
         id='endereco'
         label='Endereço'
