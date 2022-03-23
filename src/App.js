@@ -2,7 +2,7 @@ import './App.css';
 import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
 import { Container, Typography  } from '@mui/material';
 import 'fontsource-roboto';
-import { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF  } from './models/cadastro';
+import { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP  } from './models/cadastro';
 import ValidacoesCadastro from './contexts/ValidacoesCadastro';
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
           nome: validarNome,
           sobrenome: validarSobrenome,
           cpf: validarCPF, 
+          cep: validarCEP,
         }}>
         <FormularioCadastro aoEnviar={aoEnviarForm} />
       </ValidacoesCadastro.Provider>

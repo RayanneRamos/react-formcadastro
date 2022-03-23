@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, TextField } from '@mui/material';
+import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
+import useErros from '../../hooks/useErros';
 
 const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
   const [ cep, setCEP ] = useState('');
@@ -8,6 +10,8 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
   const [ estado, setEstado ] = useState('');
   const [ cidade, setCidade ] = useState('');
   const [ bairro, setBairro ] = useState('');
+  const validacoes = useContext(ValidacoesCadastro);
+  const [erros, validarCampos, possoEnviar] = useErros(validacoes);
 
   return(
     <form 
@@ -19,6 +23,9 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
       <TextField 
         value={cep}
         onChange={(event) => setCEP(event.target.value)}
+        onBlur={validarCampos}
+        error={!erros.cep.valido}
+        helperText={erros.cep.texto}
         placeholder='00000-000'
         id='cep'
         label='CEP'

@@ -46,6 +46,12 @@ function validarCPF(cpf) {
   }
 }
 
+function validarCEP(cep) {
+  if(cep.length < 8) {
+    return { valido: false, texto: 'CEP deve ter 8 dígitos.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
 
-
-export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF };
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP };
