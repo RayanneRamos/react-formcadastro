@@ -78,4 +78,12 @@ function validarEstado(estado) {
   }
 }
 
-export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado };
+function validarCidade(cidade) {
+  if(cidade.length <= 0) {
+    return { valido: false, texto: 'O campo cidade precisa ser maior do que 0.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado, validarCidade };

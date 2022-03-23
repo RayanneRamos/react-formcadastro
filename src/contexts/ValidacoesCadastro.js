@@ -1,5 +1,5 @@
 import React from 'react';
-import { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado  } from '../models/cadastro';
+import { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado, validarCidade  } from '../models/cadastro';
 
 const ValidacoesCadastro = React.createContext(
   {
@@ -13,6 +13,7 @@ const ValidacoesCadastro = React.createContext(
     endereco: validarEndereco,
     numero: validarNumero,
     estado: validarEstado,
+    cidade: validarCidade,
   }
 );
 

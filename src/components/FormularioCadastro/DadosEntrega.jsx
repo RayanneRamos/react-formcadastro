@@ -86,6 +86,9 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
         style={{ marginRight: 25}}
         value={cidade}
         onChange={(event) => setCidade(event.target.value)} 
+        onBlur={validarCampos}
+        error={!erros.cidade.valido}
+        helperText={erros.cidade.texto}
         placeholder='Rio de Janeiro'
         id='cidade'
         label='Cidade'
