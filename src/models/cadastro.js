@@ -1,5 +1,10 @@
 function validarEmail(email) { 
-  if(email === "") {
+
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  document.getElementsByName('email').value = email;
+  const emailTest = emailRegex.test(email);
+
+  if(!emailTest) {
     return { valido: false, texto: 'O campo email não pode ser vazio.' }
   } else {
     return { valido: true, texto: '' }
