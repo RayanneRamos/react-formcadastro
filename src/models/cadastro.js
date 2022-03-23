@@ -62,4 +62,12 @@ function validarEndereco(endereco) {
   }
 }
 
-export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco };
+function validarNumero(numero) {
+  if(numero.length <= 0 ) {
+    return { valido: false, texto: 'O campo número precisa ser maior do que 0.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero };

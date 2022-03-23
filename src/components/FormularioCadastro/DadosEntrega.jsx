@@ -11,7 +11,7 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
   const [ cidade, setCidade ] = useState('');
   const [ bairro, setBairro ] = useState('');
   const validacoes = useContext(ValidacoesCadastro);
-  const [erros, validarCampos, possoEnviar] = useErros(validacoes);
+  const [erros, validarCampos ] = useErros(validacoes);
 
   return(
     <form 
@@ -55,6 +55,9 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
         style={{ marginRight: 25 }}
         value={numero}
         onChange={(event) => setNumero(event.target.value)} 
+        onBlur={validarCampos}
+        error={!erros.numero.valido}
+        helperText={erros.numero.texto}
         placeholder='10'
         id='numero'
         label='Numero'
