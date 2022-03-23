@@ -24,6 +24,9 @@ const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
       <TextField
         onChange={(event) => setNome(event.target.value)} 
         value={nome}
+        onBlur={validarCampos}
+        error={!erros.nome.valido}
+        helperText={erros.nome.texto}
         placeholder='João'
         id='nome'
         label='Nome'

@@ -16,7 +16,15 @@ function validarSenha(senha) {
 
 function validarConfirmaSenha(confirmaSenha) {
   if(confirmaSenha === "") {
-    return { valido: false, texto: 'O campo Confirma Senha não pode ser vazio.' }
+    return { valido: false, texto: 'O campo confirma senha não pode ser vazio.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+function validarNome(nome) {
+  if(nome.length < 3) {
+    return { valido: false, texto: 'O campo nome não pode ser vazio.' }
   } else {
     return { valido: true, texto: '' }
   }
@@ -32,4 +40,4 @@ function validarCPF(cpf) {
 
 
 
-export { validarEmail, validarSenha, validarConfirmaSenha, validarCPF };
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarCPF };
