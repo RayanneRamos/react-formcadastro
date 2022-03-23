@@ -2,14 +2,19 @@ import './App.css';
 import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
 import { Container, Typography  } from '@mui/material';
 import 'fontsource-roboto';
-import { validarEmail, validarCPF, validarSenha  } from './models/cadastro';
+import { validarEmail, validarSenha, validarConfirmaSenha, validarCPF  } from './models/cadastro';
 import ValidacoesCadastro from './contexts/ValidacoesCadastro';
 
 function App() {
   return (
     <Container component='article' maxWidth='sm'>
       <Typography variant='h3' component='h1' align='center'>Formulário Cadastro</Typography>
-      <ValidacoesCadastro.Provider value={{ cpf: validarCPF, senha: validarSenha, email: validarEmail}} >
+      <ValidacoesCadastro.Provider value={
+        { 
+          email: validarEmail,
+          senha: validarSenha, 
+          cpf: validarCPF, 
+        }}>
         <FormularioCadastro aoEnviar={aoEnviarForm} />
       </ValidacoesCadastro.Provider>
     </Container>

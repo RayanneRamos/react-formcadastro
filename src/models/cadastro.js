@@ -1,7 +1,9 @@
-function validarEmail(email) {
-  const emailRegex = '(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}\.?\w{0,2})';
+function validarEmail(email) { 
+  
+  const emailRegex = new RegExp("(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}\.?\w{0,2})");
+  const emailValido = document.getElementById('#email').value = email;
 
-  if(email.length !== emailRegex) {
+  if(emailValido !== emailRegex) {
     return { valido: false, texto: 'Precisa preencher o campo email no formato certo.' }
   } else {
     return { valido: true, texto: '' }
