@@ -64,7 +64,7 @@ function validarEndereco(endereco) {
 
 function validarNumero(numero) {
   if(numero.length <= 0 ) {
-    return { valido: false, texto: 'O campo número precisa ser maior do que 0.' }
+    return { valido: false, texto: 'O campo número precisa ser maior que 0.' }
   } else {
     return { valido: true, texto: '' }
   }
@@ -79,11 +79,19 @@ function validarEstado(estado) {
 }
 
 function validarCidade(cidade) {
-  if(cidade.length <= 0) {
-    return { valido: false, texto: 'O campo cidade precisa ser maior do que 0.' }
+  if(cidade === "") {
+    return { valido: false, texto: 'O campo cidade não pode ser vazio.' }
   } else {
     return { valido: true, texto: '' }
   }
 }
 
-export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado, validarCidade };
+function validarBairro(bairro) {
+  if(bairro === "") {
+    return { valido: false, texto: 'O campo bairro não pode ser vazio.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado, validarCidade, validarBairro };

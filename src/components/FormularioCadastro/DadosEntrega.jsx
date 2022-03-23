@@ -101,6 +101,9 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
       <TextField 
         value={bairro}
         onChange={(event) => setBairro(event.target.value)}
+        onBlur={validarCampos}
+        error={!erros.bairro.valido}
+        helperText={erros.bairro.texto}
         placeholder='Copacabana'
         id='bairro'
         label='Bairro'
