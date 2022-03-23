@@ -54,6 +54,9 @@ const DadosUsuario = ({ aoEnviar }) => {
       <TextField 
         value={confirmaSenha}
         onChange={(event) => setConfirmaSenha(event.target.value)}
+        onBlur={validarCampos}
+        error={!erros.confirmaSenha.valido}
+        helperText={erros.confirmaSenha.texto}
         placeholder='**********'
         id='confirmaSenha'
         label='Confirma Senha'

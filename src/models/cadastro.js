@@ -1,10 +1,6 @@
 function validarEmail(email) { 
-  
-  const emailRegex = new RegExp("(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6}\.?\w{0,2})");
-  const emailValido = document.getElementById('#email').value = email;
-
-  if(emailValido !== emailRegex) {
-    return { valido: false, texto: 'Precisa preencher o campo email no formato certo.' }
+  if(email === "") {
+    return { valido: false, texto: 'O campo email não pode ser vazio.' }
   } else {
     return { valido: true, texto: '' }
   }
@@ -13,6 +9,14 @@ function validarEmail(email) {
 function validarSenha(senha) {
   if(senha.length < 4 || senha.length > 72) {
     return { valido: false, texto: 'Senha deve ter entre 4 e 72 dígitos.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+function validarConfirmaSenha(confirmaSenha) {
+  if(confirmaSenha === "") {
+    return { valido: false, texto: 'O campo Confirma Senha não pode ser vazio.' }
   } else {
     return { valido: true, texto: '' }
   }
@@ -28,4 +32,4 @@ function validarCPF(cpf) {
 
 
 
-export { validarEmail, validarSenha, validarCPF };
+export { validarEmail, validarSenha, validarConfirmaSenha, validarCPF };

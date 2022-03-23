@@ -1,10 +1,11 @@
 import React from 'react';
-import { validarCPF, validarSenha, validarEmail } from '../models/cadastro';
+import { validarEmail, validarSenha, validarConfirmaSenha, validarCPF  } from '../models/cadastro';
 
 const ValidacoesCadastro = React.createContext(
   {
     email: validarEmail,
     senha: validarSenha,
+    confirmaSenha: validarConfirmaSenha,
     cpf: validarCPF,
   }
 );

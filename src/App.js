@@ -13,6 +13,7 @@ function App() {
         { 
           email: validarEmail,
           senha: validarSenha, 
+          confirmaSenha: validarConfirmaSenha,
           cpf: validarCPF, 
         }}>
         <FormularioCadastro aoEnviar={aoEnviarForm} />
