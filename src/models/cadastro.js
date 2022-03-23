@@ -24,7 +24,15 @@ function validarConfirmaSenha(confirmaSenha) {
 
 function validarNome(nome) {
   if(nome.length < 3) {
-    return { valido: false, texto: 'O campo nome não pode ser vazio.' }
+    return { valido: false, texto: 'O campo nome precisa ter mais de 3 letras.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+function validarSobrenome(sobrenome) {
+  if(sobrenome.length < 3) {
+    return { valido: false, texto: 'O campo sobrenome precisa ter mais de 3 letras.' }
   } else {
     return { valido: true, texto: '' }
   }
@@ -40,4 +48,4 @@ function validarCPF(cpf) {
 
 
 
-export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarCPF };
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF };
