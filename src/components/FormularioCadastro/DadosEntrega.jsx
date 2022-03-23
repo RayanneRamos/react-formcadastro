@@ -70,6 +70,9 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
       <TextField
         value={estado}
         onChange={(event) => setEstado(event.target.value)} 
+        onBlur={validarCampos}
+        error={!erros.estado.valido}
+        helperText={erros.estado.texto}
         placeholder='RJ'
         id='estado'
         label='Estado'

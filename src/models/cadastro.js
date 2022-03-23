@@ -70,4 +70,12 @@ function validarNumero(numero) {
   }
 }
 
-export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero };
+function validarEstado(estado) {
+  if(estado.length !== 2) {
+    return { valido: false, texto: 'O campo estado precisa ter a sigla do seu estado.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado };
