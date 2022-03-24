@@ -61,7 +61,12 @@ function validarCPF(cpf) {
 }
 
 function validarCEP(cep) {
-  if(cep.length < 8) {
+  
+  const cepRegex = /^([\d]{2})([\d]{3})([\d]{3})/;
+  document.getElementsByName('cep').value = cep;
+  const cepTest = cepRegex.test(cep);
+
+  if(!cepTest) {
     return { valido: false, texto: 'CEP deve ter 8 dígitos.' }
   } else {
     return { valido: true, texto: '' }
