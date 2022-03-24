@@ -19,8 +19,12 @@ function validarSenha(senha) {
   }
 }
 
-function validarConfirmaSenha(confirmaSenha) {
-  if(confirmaSenha === "") {
+function validarConfirmaSenha(senha, confirmaSenha) {
+
+  const senhaDigitada = document.getElementsByName('senha').value;
+  const confirmaSenhaDigitada = document.getElementByName('confirmaSenha').value;
+  
+  if(senhaDigitada === confirmaSenhaDigitada) {
     return { valido: false, texto: 'O campo confirma senha não pode ser vazio.' }
   } else {
     return { valido: true, texto: '' }
@@ -44,7 +48,12 @@ function validarSobrenome(sobrenome) {
 }
 
 function validarCPF(cpf) {
-  if(cpf.length !== 11) {
+
+  const cpfRegex = /^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}/;
+  document.getElementsByName('cpf').value = cpf;
+  const cpfTest = cpfRegex.test(cpf);
+
+  if(!cpfTest) {
     return { valido: false, texto: 'CPF deve ter 11 dígitos.' }
   } else {
     return { valido: true, texto: '' }
