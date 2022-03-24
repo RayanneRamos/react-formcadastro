@@ -19,12 +19,8 @@ function validarSenha(senha) {
   }
 }
 
-function validarConfirmaSenha(senha, confirmaSenha) {
-
-  const senhaDigitada = document.getElementsByName('senha').value;
-  const confirmaSenhaDigitada = document.getElementByName('confirmaSenha').value;
-  
-  if(senhaDigitada === confirmaSenhaDigitada) {
+function validarConfirmaSenha(confirmaSenha) {
+  if(confirmaSenha === "") {
     return { valido: false, texto: 'O campo confirma senha não pode ser vazio.' }
   } else {
     return { valido: true, texto: '' }
