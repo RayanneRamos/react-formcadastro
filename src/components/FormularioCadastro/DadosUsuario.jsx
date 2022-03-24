@@ -12,6 +12,7 @@ const DadosUsuario = ({ aoEnviar }) => {
   const validacoes = useContext(ValidacoesCadastro);
   const [erros, validarCampos, possoEnviar] = useErros(validacoes);
   const [ verSenha, setVerSenha ] = useState(false);
+  const [ verConfirmaSenha, setVerConfirmaSenha ] = useState(false);
 
   const handleClickShowPassword = () => {
     setVerSenha(!verSenha);
@@ -20,6 +21,15 @@ const DadosUsuario = ({ aoEnviar }) => {
   const handleMouseDownPassword = () => {
     setVerSenha(!verSenha);
   }
+
+  const handleClickShowConfirmPassword = () => {
+    setVerConfirmaSenha(!verConfirmaSenha);
+  }
+
+  const handleMouseDownConfirmPassword = () => {
+    setVerConfirmaSenha(!verConfirmaSenha);
+  }
+
 
   return (
     <form
@@ -85,11 +95,11 @@ const DadosUsuario = ({ aoEnviar }) => {
           endAdornment: (
             <InputAdornment position='end'>
               <IconButton
-                aria-label='toggle password visibility'
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
+                aria-label='toggle confirm password visibility'
+                onClick={handleClickShowConfirmPassword}
+                onMouseDown={handleMouseDownConfirmPassword}
               >
-                { verSenha ? <Visibility /> : <VisibilityOff /> }
+                { verConfirmaSenha ? <Visibility /> : <VisibilityOff /> }
               </IconButton>
             </InputAdornment>
           )
@@ -97,7 +107,7 @@ const DadosUsuario = ({ aoEnviar }) => {
         placeholder='**********'
         id='confirmaSenha'
         label='Confirma Senha'
-        type={ verSenha ? 'text' : 'password' }
+        type={ verConfirmaSenha ? 'text' : 'password' }
         name='confirmaSenha'
         variant='outlined'
         margin='normal'
