@@ -1,5 +1,4 @@
 function validarEmail(email) { 
-
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   document.getElementsByName('email').value = email;
   const emailTest = emailRegex.test(email);
@@ -20,7 +19,10 @@ function validarSenha(senha) {
 }
 
 function validarConfirmaSenha(confirmaSenha) {
-  if(confirmaSenha === "") {
+  const senhaTest = document.querySelector("#senha").value;
+  const confirmaSenhaTest = document.querySelector("#confirmaSenha").value;
+
+  if(senhaTest !== confirmaSenhaTest) {
     return { valido: false, texto: 'O campo confirma senha não pode ser vazio.' }
   } else {
     return { valido: true, texto: '' }
@@ -44,7 +46,6 @@ function validarSobrenome(sobrenome) {
 }
 
 function validarCPF(cpf) {
-
   const cpfRegex = /^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}/;
   document.getElementsByName('cpf').value = cpf;
   const cpfTest = cpfRegex.test(cpf);
@@ -57,7 +58,6 @@ function validarCPF(cpf) {
 }
 
 function validarCEP(cep) {
-  
   const cepRegex = /^([\d]{2})([\d]{3})([\d]{3})/;
   document.getElementsByName('cep').value = cep;
   const cepTest = cepRegex.test(cep);
