@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Button, TextField } from '@mui/material';
 import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
 import useErros from '../../hooks/useErros';
+//import MascaraCEP from '../../models/mascaraCEP';
 
 const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
   const [ cep, setCEP ] = useState('');
@@ -26,6 +27,9 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
         onBlur={validarCampos}
         error={!erros.cep.valido}
         helperText={erros.cep.texto}
+        //InputProps={{
+          //inputComponent: MascaraCEP,
+        //}}
         placeholder='00000-000'
         id='cep'
         label='CEP'
