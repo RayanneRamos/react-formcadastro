@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Button, TextField, Switch, FormControlLabel } from '@mui/material';
 import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
 import useErros from '../../hooks/useErros';
+//import MascaraCPF from '../../models/mascaraCPF';
 
 const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
   const [ nome, setNome ] = useState('');
@@ -57,6 +58,9 @@ const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
         error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
         onBlur={validarCampos}
+        //InputProps={{
+          //inputComponent: MascaraCPF,
+        //}}
         placeholder='11122233310'
         id='cpf'
         label='CPF'
