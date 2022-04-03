@@ -14,6 +14,20 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
   const validacoes = useContext(ValidacoesCadastro);
   const [erros, validarCampos ] = useErros(validacoes);
 
+  const buscarCEP = (event) => {
+    const cep = event.target.value.replace(/\D/g, '');
+    console.log(cep);
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setCEP('endereco', data.logradouro)
+        setCEP('estado', data.uf)
+        setCEP('cidade', data.localidade)
+        setCEP('bairro', data.bairro)
+      })
+  }
+
   return(
     <form 
       onSubmit={(event) => {
@@ -24,7 +38,7 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
       <TextField 
         value={cep}
         onChange={(event) => setCEP(event.target.value)}
-        onBlur={validarCampos}
+        onBlur={buscarCEP}
         error={!erros.cep.valido}
         helperText={erros.cep.texto}
         //InputProps={{
