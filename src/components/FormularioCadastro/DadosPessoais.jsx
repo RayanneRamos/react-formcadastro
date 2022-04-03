@@ -11,7 +11,7 @@ const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
   const [ novidades, setNovidades ] = useState(true);
   const validacoes = useContext(ValidacoesCadastro);
   const [erros, validarCampos, possoEnviar] = useErros(validacoes);
-  
+
   return (
     <form 
       onSubmit={(event) => {
