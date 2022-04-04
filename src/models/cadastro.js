@@ -58,7 +58,7 @@ function validarCPF(cpf) {
 }
 
 function validarCEP(cep) {
-  const cepRegex = /^([\d]{2})([\d]{3})([\d]{3})/;
+  const cepRegex = /^[0-9]{5}-[0-9]{3}$/;
   document.getElementsByName('cep').value = cep;
   const cepTest = cepRegex.test(cep);
 
