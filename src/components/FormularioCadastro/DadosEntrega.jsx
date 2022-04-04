@@ -3,7 +3,6 @@ import { Button, TextField } from '@mui/material';
 import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
 import useErros from '../../hooks/useErros';
 import NumberFormat from 'react-number-format';
-//import MascaraCEP from '../../models/mascaraCEP';
 
 const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
   const [ cep, setCEP ] = useState('');
@@ -22,10 +21,11 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        setCEP('endereco', data.logradouro)
-        setCEP('estado', data.uf)
-        setCEP('cidade', data.localidade)
-        setCEP('bairro', data.bairro)
+        setCEP(data.cep)
+        setEndereco(data.logradouro)
+        setEstado(data.uf)
+        setCidade(data.localidade)
+        setBairro(data.bairro)
       })
   }
 
@@ -39,7 +39,7 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
       <NumberFormat
         onChange={(event) => setCEP(event.target.value)}
         value={cep}
-        onBlur={validarCampos}
+        onBlur={buscarCEP}
         error={!erros.cep.valido}
         helperText={erros.cep.texto}  
         name='cep'
@@ -50,7 +50,6 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
         variant="outlined"
         id='cep'
         label='CEP'
-        fullWidth
         margin='normal'
         required
       />
