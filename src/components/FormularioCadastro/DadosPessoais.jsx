@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Button, TextField, Switch, FormControlLabel } from '@mui/material';
 import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
 import useErros from '../../hooks/useErros';
-//import MascaraCPF from '../../models/mascaraCPF';
+import NumberFormat from 'react-number-format';
 
 const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
   const [ nome, setNome ] = useState('');
@@ -52,21 +52,20 @@ const DadosPessoais = ({ aoEnviar, aoVoltar }) => {
         margin='normal'
         required
       />
-      <TextField 
+      <NumberFormat
         onChange={(event) => setCPF(event.target.value)}
         value={cpf}
-        error={!erros.cpf.valido}
-        helperText={erros.cpf.texto}
         onBlur={validarCampos}
-        //InputProps={{
-          //inputComponent: MascaraCPF,
-        //}}
-        placeholder='11122233310'
+        error={!erros.cpf.valido}
+        helperText={erros.cpf.texto}  
+        name='cpf'
+        mask={"_"}
+        customInput={TextField}
+        format={"###.###.###-##"}
+        type="text"
+        variant="outlined"
         id='cpf'
         label='CPF'
-        name='cpf'
-        type='number'
-        variant='outlined'
         fullWidth
         margin='normal'
         required
