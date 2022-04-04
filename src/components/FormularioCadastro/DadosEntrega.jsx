@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Button, TextField } from '@mui/material';
 import ValidacoesCadastro from '../../contexts/ValidacoesCadastro';
 import useErros from '../../hooks/useErros';
+import NumberFormat from 'react-number-format';
 //import MascaraCEP from '../../models/mascaraCEP';
 
 const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
@@ -35,21 +36,21 @@ const DadosEntrega = ({ aoEnviar, aoVoltar }) => {
         aoEnviar({ cep, endereco, numero, cidade, estado, bairro });
       }}
     >
-      <TextField 
-        value={cep}
+      <NumberFormat
         onChange={(event) => setCEP(event.target.value)}
-        onBlur={buscarCEP}
+        value={cep}
+        onBlur={validarCampos}
         error={!erros.cep.valido}
-        helperText={erros.cep.texto}
-        //InputProps={{
-          //inputComponent: MascaraCEP,
-        //}}
-        placeholder='00000-000'
+        helperText={erros.cep.texto}  
+        name='cep'
+        mask={"_"}
+        customInput={TextField}
+        format={"#####-###"}
+        type="text"
+        variant="outlined"
         id='cep'
         label='CEP'
-        type='number'
-        name='cep'
-        variant='outlined'
+        fullWidth
         margin='normal'
         required
       />
