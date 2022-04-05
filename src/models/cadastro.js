@@ -23,7 +23,7 @@ function validarConfirmaSenha(confirmaSenha) {
   const confirmaSenhaTest = document.querySelector("#confirmaSenha").value;
 
   if(senhaTest !== confirmaSenhaTest) {
-    return { valido: false, texto: 'O campo confirma senha não pode ser vazio.' }
+    return { valido: false, texto: 'As senhas não são iguais.' }
   } else {
     return { valido: true, texto: '' }
   }
