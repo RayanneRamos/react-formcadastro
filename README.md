@@ -57,6 +57,15 @@ Você pode visualizar o layout do projeto através:
 
  - [LayoutWeb](https://www.figma.com/file/vHGYS7w3ZDukqVThYSzgjH/react-form-cadastro?node-id=0%3A1) 
 
+## 🔥 Desafios
+ - [x] Adição do campo confirma senha, bairro e estado
+ - [x] Validação de Cadastro por meio de Regex
+ - [x] Ver a senha / esconder a senha
+ - [x] Máscara de CPF e CEP
+ - [x] Botão Voltar
+ - [x] Consumo da API ViaCep
+
+
 ## 📝 License
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para obter mais detalhes.
