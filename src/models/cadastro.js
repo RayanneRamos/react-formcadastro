@@ -109,4 +109,28 @@ function validarBairro(bairro) {
   }
 }
 
-export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado, validarCidade, validarBairro };
+function validarNumeroCartao(numeroCartao) {
+  if(numeroCartao.length <= 0) {
+    return { valido: false, texto: 'O campo número do cartão precisa não pode ser zero.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+function validarValidade(cvc) {
+  if(cvc.length !== 4) {
+    return { valido: false, texto: 'O campo validade precisa ser igual a quatro.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+function validarCodigoSeguranca(codigoSeguranca) {
+  if(codigoSeguranca.length < 3) {
+    return { valido: false, texto: 'O campo cvc precisa ser maior do que três.' }
+  } else {
+    return { valido: true, texto: '' }
+  }
+}
+
+export { validarEmail, validarSenha, validarConfirmaSenha, validarNome, validarSobrenome, validarCPF, validarCEP, validarEndereco, validarNumero, validarEstado, validarCidade, validarBairro, validarNumeroCartao, validarValidade, validarCodigoSeguranca };
