@@ -68,6 +68,7 @@ Você pode visualizar o layout do projeto através:
  - [x] Adicionando a página de Dados de Cartão de Crédito
  - [x] Adicionando um cartão de crédito interativo
  - [] Responsividade
+ - [] Deploy
 
 
 ## 📝 License
