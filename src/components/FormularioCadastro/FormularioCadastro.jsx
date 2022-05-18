@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import DadosPessoais from './DadosPessoais';
-import DadosUsuario from './DadosUsuario';
-import DadosEntrega from './DadosEntrega';
+import DadosPessoais from '../DadosPessoais/DadosPessoais';
+import DadosUsuario from '../DadosUsuario/DadosUsuario';
+import DadosEntrega from '../DadosEntrega/DadosEntrega';
+import DadosCartaoCredito from '../DadosCartaoCredito/DadosCartaoCredito';
 import { Typography, Stepper, Step, StepLabel } from '@mui/material';
 
 const FormularioCadastro = ({ aoEnviar, validacoes }) => {
@@ -17,6 +18,7 @@ const FormularioCadastro = ({ aoEnviar, validacoes }) => {
   const formularios = [
     <DadosUsuario aoEnviar={coletarDados}  aoVoltar={voltarColetarDados} />,
     <DadosPessoais aoEnviar={coletarDados} aoVoltar={voltarColetarDados} />,
+    <DadosCartaoCredito aoEnviar={coletarDados} aoVoltar={voltarColetarDados} />,
     <DadosEntrega aoEnviar={coletarDados}  aoVoltar={voltarColetarDados} />,
     <Typography variant='h5'>Obrigado por se cadastrar!</Typography>
   ];
@@ -47,6 +49,9 @@ const FormularioCadastro = ({ aoEnviar, validacoes }) => {
         </Step>
         <Step>
           <StepLabel>Pessoal</StepLabel>
+        </Step>
+        <Step>
+          <StepLabel>Cartão</StepLabel>
         </Step>
         <Step>
           <StepLabel>Entrega</StepLabel>

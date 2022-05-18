@@ -29,6 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
  - [materialUi-Icons](https://mui.com/pt/components/material-icons/)
  - [ReactRouterDom](https://reactrouter.com/web/guides/quick-start)
  - [ReactNumberFormat](https://www.npmjs.com/package/react-number-format)
+ - [ReactCreditCards](https://github.com/amaroteam/react-credit-cards)
 
 
 ## 🚀 Instalação
@@ -64,6 +65,9 @@ Você pode visualizar o layout do projeto através:
  - [x] Máscara de CPF e CEP
  - [x] Botão Voltar
  - [x] Consumo da API ViaCep
+ - [x] Adicionando a página de Dados de Cartão de Crédito
+ - [x] Adicionando um cartão de crédito interativo
+ - [] Responsividade
 
 
 ## 📝 License
