@@ -67,7 +67,8 @@ Você pode visualizar o layout do projeto através:
  - [x] Consumo da API ViaCep
  - [x] Adicionando a página de Dados de Cartão de Crédito
  - [x] Adicionando um cartão de crédito interativo
- - [] Responsividade
+ - [x] Responsividade
+ - [] Testes
  - [] Deploy
 
 
