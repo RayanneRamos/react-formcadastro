@@ -23,6 +23,7 @@ const DadosCartaoCredito = ({ aoEnviar, aoVoltar }) => {
     <>
       <div id='PaymentForm'>
         <Cards 
+          id='cards'
           cvc={codigoSeguranca}
           expiry={validade}
           focused={focused}
