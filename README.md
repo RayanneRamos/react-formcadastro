@@ -26,7 +26,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
  - [ReactJS](https://reactjs.org)
  - [MaterialUI](https://mui.com/pt/)
- - [materialUi-Icons](https://mui.com/pt/components/material-icons/)
+ - [MaterialUi-Icons](https://mui.com/pt/components/material-icons/)
  - [ReactRouterDom](https://reactrouter.com/web/guides/quick-start)
  - [ReactNumberFormat](https://www.npmjs.com/package/react-number-format)
  - [ReactCreditCards](https://github.com/amaroteam/react-credit-cards)
