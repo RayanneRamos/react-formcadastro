@@ -70,7 +70,12 @@ Você pode visualizar o layout do projeto através:
  - [x] Responsividade
  - [ ] Testes  
  - [x] Deploy
-
+ - [ ] Página de escolha de Pessoa Física ou Pessoa Jurídica
+ - [ ] Adicionar os campos de Pessoa Jurídica
+ - [ ] Adicionar a máscara do CNPJ
+ - [ ] Validação do campo CNPJ por meio de Regex
+ - [ ] Adicionar um banco de dados para salvar as informações
+ - [ ] Voltar para a página anterior com os campos preenchidos
 
 ## 📝 License
 
